@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
-    const form = document.querySelector('#send-form');
+    const form = document.querySelector('#message-form');
     const inputForm = form.querySelector('input[type="text"]');
     const submitButton = form.querySelector('input[type="submit"]');
     const messagesTable = document.querySelector('#messages');
@@ -20,7 +20,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function connectChat() {
-        const ws = new WebSocket(`ws://${location.host}/chat/ws`);
+        const ws = new WebSocket(`ws://${location.host}/chat/ws${location.search || ''}`);
         ws.onopen = event => {
             console.log(event);
             info(`WebSocket Open`);
@@ -43,14 +43,14 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function enableForm() {
-        setFormDisable(false);
+        setFormDisabled(false);
     }
 
     function disableForm() {
-        setFormDisable(true);
+        setFormDisabled(true);
     }
 
-    function setFormDisable(isDisabled) {
+    function setFormDisabled(isDisabled) {
         Array.from(form.querySelectorAll('input')).forEach(i => {
             i.disable = isDisabled;
         });

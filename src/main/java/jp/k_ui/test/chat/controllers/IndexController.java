@@ -16,6 +16,6 @@ public class IndexController implements Controller {
 
     @Override
     public HttpHandler getHttpHandler() {
-        return Handlers.resource(new ClassPathResourceManager(ClassUtils.getDefaultClassLoader(), "html"));
+        return Handlers.resource(new ClassPathResourceManager(ClassUtils.getDefaultClassLoader(), "static"));
     }
 }
