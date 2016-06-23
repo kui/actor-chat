@@ -41,7 +41,7 @@ public class ChatServer implements DisposableBean {
                 ChatServer::accessLoggerHandler);
 
         val handler = filters.stream()
-                             .reduce((f, g) -> h -> f.apply(g.apply(h)))
+                             .reduce((f, g) -> h -> g.apply(f.apply(h)))
                              .map(f -> f.apply(pathHandler))
                              .orElseThrow(RuntimeException::new);
 
