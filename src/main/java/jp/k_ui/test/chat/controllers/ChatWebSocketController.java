@@ -8,7 +8,6 @@ import java.util.Map;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
-import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 import io.undertow.Handlers;
@@ -44,17 +43,17 @@ public class ChatWebSocketController implements Controller {
             ChatService.Room room = new ChatService.Room(roomNames.get(0));
 
             ChatService.SessionContext context =
-                    new ChatService.SessionContext(exchange, channel, user, room, chatServiceMessage -> {
-                        Message message = new Message(chatServiceMessage.getTimestamp(),
-                                                      chatServiceMessage.getMessage());
-                        String json;
-                        try {
-                            json = objectMapper.writeValueAsString(message);
-                        } catch (JsonProcessingException e) {
-                            log.warn("Message serialize error", e);
-                            return;
+                    new ChatService.SessionContext(exchange, user, room, new ChatService.Channel() {
+                        @Override
+                        public void send(Object o) throws IOException {
+                            String json = objectMapper.writeValueAsString(o);
+                            WebSockets.sendText(json, channel, null);
                         }
-                        WebSockets.sendText(json, channel, null);
+
+                        @Override
+                        public void close() throws IOException {
+                            channel.close();
+                        }
                     });
 
             chatService.onConnect(context, () -> {

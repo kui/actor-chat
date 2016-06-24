@@ -45,3 +45,7 @@ springBoot {
 task wrapper(type: Wrapper) {
     gradleVersion = "2.13"
 }
+
+tasks.withType(JavaCompile) {
+    options.compilerArgs << "-Xlint:unchecked" << "-Xlint:deprecation"
+}
