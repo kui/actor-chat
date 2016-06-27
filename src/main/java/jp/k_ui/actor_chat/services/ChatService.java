@@ -1,4 +1,4 @@
-package jp.k_ui.test.chat.services;
+package jp.k_ui.actor_chat.services;
 
 import java.io.IOException;
 import java.time.Instant;
@@ -10,8 +10,8 @@ import org.springframework.stereotype.Component;
 import akka.actor.ActorRef;
 import akka.actor.Inbox;
 import io.undertow.websockets.spi.WebSocketHttpExchange;
-import jp.k_ui.test.chat.akka.actors.ChatActor;
-import jp.k_ui.test.chat.akka.actors.WebSocketActor;
+import jp.k_ui.actor_chat.akka.actors.WebSocketActor;
+import jp.k_ui.actor_chat.akka.actors.ChatActor;
 import lombok.NonNull;
 import lombok.RequiredArgsConstructor;
 import lombok.Value;

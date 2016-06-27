@@ -1,4 +1,4 @@
-package jp.k_ui.test.chat.akka;
+package jp.k_ui.actor_chat.akka;
 
 import org.springframework.context.ApplicationContext;
 

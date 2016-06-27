@@ -1,4 +1,4 @@
-package jp.k_ui.test.chat;
+package jp.k_ui.actor_chat;
 
 import java.util.List;
 import java.util.function.Function;
@@ -16,7 +16,7 @@ import io.undertow.Undertow;
 import io.undertow.server.HttpHandler;
 import io.undertow.server.handlers.PathHandler;
 import io.undertow.server.handlers.accesslog.AccessLogHandler;
-import jp.k_ui.test.chat.controllers.Controller;
+import jp.k_ui.actor_chat.controllers.Controller;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import lombok.val;

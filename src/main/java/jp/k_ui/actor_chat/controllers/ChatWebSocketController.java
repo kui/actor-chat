@@ -1,4 +1,4 @@
-package jp.k_ui.test.chat.controllers;
+package jp.k_ui.actor_chat.controllers;
 
 import java.io.IOException;
 import java.time.Instant;
@@ -16,7 +16,7 @@ import io.undertow.websockets.core.AbstractReceiveListener;
 import io.undertow.websockets.core.BufferedTextMessage;
 import io.undertow.websockets.core.WebSocketChannel;
 import io.undertow.websockets.core.WebSockets;
-import jp.k_ui.test.chat.services.ChatService;
+import jp.k_ui.actor_chat.services.ChatService;
 import lombok.RequiredArgsConstructor;
 import lombok.Value;
 import lombok.extern.slf4j.Slf4j;

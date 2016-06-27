@@ -1,6 +1,4 @@
-package jp.k_ui.test.chat;
-
-import static jp.k_ui.test.chat.akka.SpringExtension.SpringExtensionProvider;
+package jp.k_ui.actor_chat;
 
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.Bean;
@@ -13,7 +11,8 @@ import com.fasterxml.jackson.databind.SerializationFeature;
 import akka.actor.ActorRef;
 import akka.actor.ActorSystem;
 import akka.actor.Inbox;
-import jp.k_ui.test.chat.akka.actors.ChatActor;
+import jp.k_ui.actor_chat.akka.SpringExtension;
+import jp.k_ui.actor_chat.akka.actors.ChatActor;
 import lombok.val;
 
 @Configuration
@@ -35,7 +34,7 @@ public class ChatConfiguration {
     @Bean
     public ActorSystem actorSystem(ApplicationContext ac) {
         val as = ActorSystem.create("chat");
-        SpringExtensionProvider.get(as).init(ac);
+        SpringExtension.SpringExtensionProvider.get(as).init(ac);
         return as;
     }
 

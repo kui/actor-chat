@@ -1,4 +1,4 @@
-package jp.k_ui.test.chat.akka.actors;
+package jp.k_ui.actor_chat.akka.actors;
 
 import akka.actor.AbstractActor;
 import akka.actor.ActorRef;

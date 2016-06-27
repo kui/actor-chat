@@ -1,4 +1,4 @@
-package jp.k_ui.test.chat.controllers;
+package jp.k_ui.actor_chat.controllers;
 
 import static java.nio.charset.StandardCharsets.UTF_8;
 

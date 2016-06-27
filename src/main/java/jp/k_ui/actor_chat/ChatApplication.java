@@ -1,4 +1,4 @@
-package jp.k_ui.test.chat;
+package jp.k_ui.actor_chat;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;

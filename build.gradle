@@ -1,4 +1,4 @@
-group "jp.k_ui.test"
+group "jp.k_ui"
 version "1.0-SNAPSHOT"
 
 def jacksonVersion = "2.6.6"
@@ -26,7 +26,6 @@ repositories {
 }
 
 dependencies {
-    compileOnly "org.projectlombok:lombok:1.16.8"
     compile "org.springframework.boot:spring-boot-starter"
     compile "io.undertow:undertow-core"
     compile "com.google.guava:guava:19.0"
@@ -35,6 +34,7 @@ dependencies {
     compile "com.fasterxml.jackson.core:jackson-databind:${jacksonVersion}"
     compile "com.fasterxml.jackson.datatype:jackson-datatype-jsr310:${jacksonVersion}"
     compile "com.fasterxml.jackson.module:jackson-module-paranamer:${jacksonVersion}"
+    compileOnly "org.projectlombok:lombok:1.16.8"
     // testCompile "junit:junit"
 }
 

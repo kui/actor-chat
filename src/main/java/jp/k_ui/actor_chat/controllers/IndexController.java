@@ -1,4 +1,4 @@
-package jp.k_ui.test.chat.controllers;
+package jp.k_ui.actor_chat.controllers;
 
 import org.springframework.stereotype.Component;
 import org.springframework.util.ClassUtils;
